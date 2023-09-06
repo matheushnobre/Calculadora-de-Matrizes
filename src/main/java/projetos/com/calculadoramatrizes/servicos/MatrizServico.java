@@ -26,12 +26,12 @@ public class MatrizServico {
         return matrizImpressao.toString(); //retorna o texto para impressao
     }
     
-    public String retornarElementoEspecifico(){
+    public String retornarElementoEspecificoParaImpressao(){
         int[] posicao = Leitora.lerPosicao();
         return ""+matriz.retornarElemento(posicao[0], posicao[1]);
     }
     
-    public String retornarTiposMatriz(){
+    public String retornarTiposMatrizParaImpressao(){
         StringBuilder tiposMatriz = new StringBuilder();
         if(Verificadora.isMatrizLinha(matriz)==true){
             tiposMatriz.append("\nMatriz linha");
