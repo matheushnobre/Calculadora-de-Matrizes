@@ -34,9 +34,11 @@ public final class Leitora {
             System.out.println("Digite todos os elementos da linha "+linhaAtual+" da matriz: ");
             entrada = lerDado(); //lê a entrada do usuário
             for(int j=0; j<matriz.getNumeroColunas(); j++){ //percorre a coluna
-                matriz.adicionarElemento(i, j, Integer.parseInt(entrada[j])); //adiciona os valores atribuídos pelo usuário na matriz
+                matriz.adicionarElemento(i, j, Double.parseDouble(entrada[j])); //adiciona os valores atribuídos pelo usuário na matriz
             } //fecha o laço de repetição que percorre as colunas
         } //fecha o laço de repetição que percorre as linhas
+        
+        Impressora.imprimirMatrizDigitada(matriz); //confirma na tela a leitura da matriz
         
         return matriz; //retorna a matriz digitada pelo usuário
     }

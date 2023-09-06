@@ -27,12 +27,10 @@ public class Start {
             switch(opcao){ //analisará qual opção foi escolhida
                 case 1:
                     matriz = Leitora.lerMatriz();
-                    Impressora.imprimirMatrizDigitada(matriz);
                     Impressora.imprimirElementoEspecifico(matriz);
                     break;
                 case 2:
                     matriz = Leitora.lerMatriz();
-                    Impressora.imprimirMatrizDigitada(matriz);
                     Impressora.imprimirTiposMatriz(matriz);
                     break;
                 case 3:
