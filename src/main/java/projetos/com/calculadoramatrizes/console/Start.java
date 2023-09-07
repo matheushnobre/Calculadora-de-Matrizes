@@ -15,7 +15,7 @@ public class Start {
         
         String menu = ("---------- Opções do programa ---------- \n1. Verificar elemento de uma determinada posição\n"
                 + "2. Verificar tipos de matriz\n3. Calcular matriz oposta\n4. Calcular matriz transposta\n"
-                + "5. Calcular matriz inversa\n6. Calcular matriz dos cofatores\n7. Calcular matriz adjunta"
+                + "5. Calcular matriz inversa\n6. Calcular matriz dos cofatores\n7. Calcular matriz adjunta\n"
                 + "8. Somar matrizes\n9. Subtrair matrizes\n10. Multiplicar matriz por escalar\n"
                 + "11 Multiplicar matrizes\n12. Calcular determinante\n13. Sair\n-------------------------"); //menu de opções do nosso programa
         

@@ -51,6 +51,18 @@ public class MatrizServico {
         if(Verificadora.isMatrizIdentidade(matriz)==true){
             tiposMatriz.append("\nMatriz identidade");
         }
+        if(Verificadora.isMatrizDiagonal(matriz)==true){
+            tiposMatriz.append("\nMatriz diagonal");
+        }
+        if(Verificadora.isMatrizEscalar(matriz)==true){
+            tiposMatriz.append("\nMatriz escalar");
+        }
+        if(Verificadora.isMatrizTriangularInferior(matriz)==true){
+            tiposMatriz.append("\nMatriz triangular inferior");
+        }
+        if(Verificadora.isMatrizTriangularSuperior(matriz)==true){
+            tiposMatriz.append("\nMatriz Triangular superior");
+        }
         return tiposMatriz.toString();
     }
 

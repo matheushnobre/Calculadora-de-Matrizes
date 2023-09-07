@@ -66,4 +66,81 @@ public final class Verificadora {
         }
         return retorno; //retorna true ou false
     }
+    
+    public static boolean isMatrizDiagonal(Matriz matriz){ //deve possuir elementos apenas na diagonal principal
+        boolean retorno = false; //variavel para armazenar o retorno
+        if(isMatrizQuadrada(matriz)==true && matriz.getNumeroLinhas()>1){ //só pode ser diagonal se também for quadrada
+            retorno=true; //muda o retorno para verdadeiro
+            for(int i=0; i<matriz.getNumeroLinhas(); i++){ //percorrendo linhas
+                for(int j=0; j<matriz.getNumeroColunas(); j++){ //percorrendo colunas
+                    if(i==j && matriz.getMatriz()[i][j]!=0 || i!=j && matriz.getMatriz()[i][j]==0){ //verifica se os elementos da diagonal principal são diferentes de 0 e se os demais elementos são iguais a 0
+                        continue; 
+                    } else{
+                        retorno=false; 
+                        break; //se não existir possibilidade, fecha o ciclo
+                    }
+                }
+            }//fecha o laço de repetição
+        } //fecha o if
+        return retorno;
+    }
+    
+    public static boolean isMatrizEscalar(Matriz matriz){ //todos os elementos da diagonal principal sao iguais e o restante é 0
+        boolean retorno = false; //variavel para armazenar o retorno
+        double numeroEscalar = matriz.retornarElemento(0, 0); //primeiro elemento da diagonal principal. todos os demais deverao ser iguais a ele
+        if(isMatrizQuadrada(matriz)==true && isMatrizNula(matriz)==false && matriz.getNumeroLinhas()>1){ //só pode ser escalar se também for quadrada, nao for identidade e nem diagonal
+            retorno=true; //muda o retorno para verdadeiro
+            for(int i=0; i<matriz.getNumeroLinhas(); i++){ //percorrendo linhas
+                for(int j=0; j<matriz.getNumeroColunas(); j++){ //percorrendo colunas
+                    if(i==j && matriz.getMatriz()[i][j]==numeroEscalar || i!=j && matriz.getMatriz()[i][j]==0){ //verifica se os elementos da diagonal principal são iguais e os demais sao iguais a 0
+                        continue; 
+                    } else{
+                        retorno=false; 
+                        break; //se não existir possibilidade, fecha o ciclo
+                    }
+                }
+            }//fecha o laço de repetição
+        } //fecha o if
+        return retorno;
+    }
+    
+    public static boolean isMatrizTriangularInferior(Matriz matriz){
+        boolean retorno = false; //variavel para armazenar o retorno
+        if(isMatrizQuadrada(matriz)==true && isMatrizNula(matriz)==false && isMatrizIdentidade(matriz)==false && isMatrizEscalar(matriz)==false && isMatrizDiagonal(matriz)==false && matriz.getNumeroLinhas()>1){ //só pode ser triangular se também for quadrada, nao for identidade e nem diagonal
+            retorno=true; //muda o retorno para verdadeiro
+            for(int i=0; i<matriz.getNumeroLinhas(); i++){ //percorrendo linhas
+                for(int j=0; j<matriz.getNumeroColunas(); j++){ //percorrendo colunas
+                    if(j>i && matriz.getMatriz()[i][j]==0){ //verifica se os elementos acima da diagonal principal sao nulos
+                        continue; 
+                    } else if(j>i && matriz.getMatriz()[i][j]!=0){
+                        retorno=false; 
+                        break; //se não existir possibilidade, fecha o ciclo
+                    } else{
+                        continue;
+                    }
+                }
+            }//fecha o laço de repetição
+        } //fecha o if
+        return retorno;
+    }
+    
+    public static boolean isMatrizTriangularSuperior(Matriz matriz){
+        boolean retorno = false; //variavel para armazenar o retorno
+        if(isMatrizQuadrada(matriz)==true && isMatrizNula(matriz)==false && isMatrizIdentidade(matriz)==false && isMatrizEscalar(matriz)==false && isMatrizDiagonal(matriz)==false && matriz.getNumeroLinhas()>1){ //só pode ser triangular se também for quadrada, nao for identidade e nem diagonal
+            retorno=true; //muda o retorno para verdadeiro
+            for(int i=0; i<matriz.getNumeroLinhas(); i++){ //percorrendo linhas
+                for(int j=0; j<matriz.getNumeroColunas(); j++){ //percorrendo colunas
+                    if(i>j && matriz.getMatriz()[i][j]==0){ //verifica se os elementos abaixo da diagonal principal sao nulos
+                        continue; 
+                    } else if(i>j && matriz.getMatriz()[i][j]!=0){
+                        retorno=false; 
+                        break; //se não existir possibilidade, fecha o ciclo
+                    } else{
+                        continue;
+                    }
+                }
+            }//fecha o laço de repetição
+        } //fecha o if
+        return retorno;
+    }
 }
