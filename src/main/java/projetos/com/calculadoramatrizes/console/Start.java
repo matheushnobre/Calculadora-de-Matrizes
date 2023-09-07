@@ -34,13 +34,15 @@ public class Start {
                     Impressora.imprimirTiposMatriz(matriz);
                     break;
                 case 3:
-                    //calcular oposta
+                    matriz = Leitora.lerMatriz();
+                    Impressora.imprimirResultado(matriz, 1); //pede para realizar o calculo e exibir o resultado
                     break;
                 case 4:
-                    //calcular transposta
+                    matriz = Leitora.lerMatriz();
+                    Impressora.imprimirResultado(matriz, 2);
                     break;
                 case 5: 
-                    //calcular inversa
+                    System.out.println("Programa em desenvolvimento. Em breve essa função será adicionada");
                     break;
                 case 6:
                     //calcular matriz dos cofatores
