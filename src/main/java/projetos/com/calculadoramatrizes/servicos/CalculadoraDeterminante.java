@@ -15,6 +15,8 @@ public class CalculadoraDeterminante {
             return matriz.getMatriz()[0][0];
         } else if(matriz.getNumeroLinhas()==2){
             return calcularDeterminanteOrdem2();
+        } else if(matriz.getNumeroLinhas()==3){
+            return calcularDeterminanteOrdem3();
         } else{
             return 0;
         }
@@ -25,7 +27,7 @@ public class CalculadoraDeterminante {
     }
     
     private double calcularDeterminanteOrdem3(){
-        return 0;
+        return (retornarProdutoDiagonalPrincipal() + retornarParalelaPrincipal1() + retornarParalelaPrincipal2()) - (retornarProdutoDiagonalSecundaria() + retornarParalelaSecundaria1() + retornarParalelaSecundaria2());
     }
     
     private double retornarProdutoDiagonalPrincipal(){
@@ -50,5 +52,22 @@ public class CalculadoraDeterminante {
             }
         }
         return produto;
+    }
+    
+    //sequencia de metodos para ajudar no calculo do determinante de ordem 3
+    private double retornarParalelaPrincipal1(){
+        return matriz.getMatriz()[0][1] * matriz.getMatriz()[1][2] * matriz.getMatriz()[2][0];
+    }
+    
+    private double retornarParalelaPrincipal2(){
+        return matriz.getMatriz()[0][2] * matriz.getMatriz()[1][0] * matriz.getMatriz()[2][1];
+    }
+    
+    private double retornarParalelaSecundaria1(){
+       return matriz.getMatriz()[0][0] * matriz.getMatriz()[1][2] * matriz.getMatriz()[2][1];
+    }
+    
+    private double retornarParalelaSecundaria2(){
+        return matriz.getMatriz()[0][1] * matriz.getMatriz()[1][0] * matriz.getMatriz()[2][2];
     }
 }
