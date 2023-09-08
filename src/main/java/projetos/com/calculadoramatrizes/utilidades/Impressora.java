@@ -31,7 +31,36 @@ public final class Impressora {
    
     public static void imprimirResultado(Matriz matriz, int operacao){
         Matriz resultado = calculadora.realizarOperacao(matriz, operacao);
+        if(resultado==null){
+            System.out.println("Não é possível realizar a operação");
+        } else{
+            servico.setMatriz(resultado);
+            System.out.println("Resultado da operação..."+servico.retornarParaImpressao());
+        }
+    }
+    
+    public static void imprimirResultado(Matriz[] matrizes, int operacao){
+        Matriz resultado = calculadora.realizarOperacao(matrizes, operacao);
+        if(resultado==null){
+            System.out.println("Não é possível realizar a operação");
+        } else{
+            servico.setMatriz(resultado);
+            System.out.println("Resultado da operação..."+servico.retornarParaImpressao());
+        }
+    }
+    
+    public static void imprimirResultado(Matriz matriz, double escalar){
+        Matriz resultado = calculadora.realizarOperacao(matriz, escalar);
         servico.setMatriz(resultado);
         System.out.println("Resultado da operação..."+servico.retornarParaImpressao());
+    }
+    
+    public static void imprimirDeterminante(Matriz matriz){
+        if(Verificadora.isMatrizQuadrada(matriz)==false){
+            System.out.println("Não é possível calcular o determinante da matriz");
+        } else{
+            servico.setMatriz(matriz);
+            System.out.println("Determinante = "+servico.retornarDeterminante());
+        }
     }
 }

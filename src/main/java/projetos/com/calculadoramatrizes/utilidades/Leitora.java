@@ -52,5 +52,19 @@ public final class Leitora {
         return posicao;
     }
     
+    public static Matriz[] lerDuasMatrizes(){ //será utilizado para ler mais de uma matriz nas operações
+        Matriz[] matrizes = new Matriz[2]; //cria o vetor que ira armazenar duas matrizes
+        System.out.println("Certo. Vamos registrar a primeira matriz");
+        matrizes[0] = lerMatriz(); //lê a primeira matriz
+        System.out.println("Agora vamos registrar a segunda matriz");
+        matrizes[1] = lerMatriz();
+        return matrizes;
+    }
+    
+    public static double lerEscalar(){//sera utilizado na multiplicacao por escalar
+        System.out.println("Digite um número real: ");
+        double escalar = Double.parseDouble(lerDado()[0]);
+        return escalar;
+    }
     
 }

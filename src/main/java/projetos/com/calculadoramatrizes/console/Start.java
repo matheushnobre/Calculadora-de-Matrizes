@@ -8,7 +8,8 @@ import projetos.com.calculadoramatrizes.utilidades.Leitora;
 public class Start {
 
     public static void main(String[] args) {
-        Matriz matriz = new Matriz();
+        Matriz matriz;
+        Matriz[] matrizes;
         
         System.out.println("---------- Bem-vindo a calculadora de matrizes ----------");
         int opcao; //variavel que sera utilizada para saber qual foi a opção escolhida pelo usuário
@@ -51,19 +52,25 @@ public class Start {
                     //calcular matriz adjunta
                     break;
                 case 8:
-                    //somar matrizes
+                    matrizes = Leitora.lerDuasMatrizes();
+                    Impressora.imprimirResultado(matrizes, 6);
                     break;
                 case 9:
-                    //subtrair
+                    matrizes = Leitora.lerDuasMatrizes();
+                    Impressora.imprimirResultado(matrizes, 7);
                     break;
                 case 10:
-                    //multiplicar por escalar
+                    matriz = Leitora.lerMatriz();
+                    double escalar = Leitora.lerEscalar();
+                    Impressora.imprimirResultado(matriz, escalar);
                     break;
                 case 11:
-                    //multiplicar
+                    matrizes = Leitora.lerDuasMatrizes();
+                    Impressora.imprimirResultado(matrizes, 8);
                     break;
                 case 12:
-                    //calcular determinante
+                    matriz = Leitora.lerMatriz();
+                    Impressora.imprimirDeterminante(matriz);
                     break;
                 case 13:
                     System.out.println("Obrigado por utilizar nosso programa. Volte sempre!");

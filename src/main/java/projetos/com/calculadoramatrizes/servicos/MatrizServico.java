@@ -66,6 +66,11 @@ public class MatrizServico {
         return tiposMatriz.toString();
     }
 
+    public double retornarDeterminante(){
+        CalculadoraDeterminante determinante = new CalculadoraDeterminante(matriz);
+        return determinante.calcularDeterminante();
+    }
+    
     public Matriz getMatriz() {
         return matriz;
     }
